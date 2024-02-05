@@ -1,0 +1,39 @@
+ *{
+    color: white;
+    /* margin: 0; */
+ }
+.container{
+    width: 600px;
+    margin: 100px auto;
+    background-color: rgb(3, 41, 41);
+    /* text-align: center; */
+    border-radius: 5%;
+    padding: 50px;
+    font-size: x-large;
+}
+
+h1{
+    text-align: center;
+}
+
+
+
+.font{
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    color: brown;
+    font-size: xx-large;
+}
+
+button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white ;
+    background-color: black;
+}
+ 
+button:hover{
+    background-color: white;
+    color: red;
+    zoom: 1.2;
+    
+}
