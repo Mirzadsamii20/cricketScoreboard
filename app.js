@@ -10,7 +10,7 @@ let btnSix = document.getElementById("six");
 let btnWicket = document.getElementById("out");
 
 runs.textContent = 0;
-wickets.textContent = 1;
+wickets.textContent = 0;
 console.log(wickets.textContent)
 target.textContent = '94';
 
