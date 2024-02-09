@@ -1,26 +1,31 @@
  *{
-    color: white;
+    color: black;
     /* margin: 0; */
  }
 .container{
     width: 600px;
     margin: 100px auto;
-    background-color: rgb(3, 41, 41);
+    background-color: rgb(16, 184, 184);
     /* text-align: center; */
     border-radius: 5%;
     padding: 50px;
     font-size: x-large;
 }
 
-h1{
+h1 , h2 {
     text-align: center;
+}
+
+h2{
+    font-family:cursive;
+    color: brown;
 }
 
 
 
 .font{
     font-family: 'Cursed Timer ULiL', sans-serif;
-    color: brown;
+    color: white;
     font-size: xx-large;
     background-color: black;
     
@@ -41,4 +46,10 @@ button:hover{
     color: red;
     zoom: 1.2;
     
+}
+
+.btn-container{
+    width: 500px;
+    margin:50px 0 50px auto ;
+    /* margin-right: auto; */
 }

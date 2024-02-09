@@ -8,11 +8,12 @@ let btnTwo = document.getElementById("two");
 let btnFour = document.getElementById("four");
 let btnSix = document.getElementById("six");
 let btnWicket = document.getElementById("out");
+const resultEl = document.getElementById("result");
 
 runs.textContent = 0;
 wickets.textContent = 0;
 console.log(wickets.textContent)
-target.textContent = '94';
+target.textContent = Math.floor(Math.random()*20 + 100);
 
 
 
@@ -22,8 +23,10 @@ btnOne.addEventListener('click', function(){
     if ( overs.textContent < 10 && wickets.textContent < 10 && parseInt(runs.textContent) <=( parseInt(target.textContent ))){
       (runs.textContent) ++;
     ballsF();
-
+  
     }
+    checkWinLose();
+
 })
 btnTwo.addEventListener('click', function(){
     if ( overs.textContent < 10 && wickets.textContent < 10 && parseInt(runs.textContent) <=( parseInt(target.textContent ))){
@@ -31,6 +34,8 @@ btnTwo.addEventListener('click', function(){
     runs.textContent = parseInt(runs.textContent)+2;
     ballsF();
 }
+checkWinLose();
+
 
 
 })
@@ -40,7 +45,8 @@ btnFour.addEventListener('click', function(){
     runs.textContent = parseInt(runs.textContent)+4; 
     ballsF();
 }
-    
+checkWinLose();
+
 
 })
 btnSix.addEventListener('click', function(){
@@ -49,18 +55,32 @@ btnSix.addEventListener('click', function(){
 
     runs.textContent = parseInt(runs.textContent)+6;
     ballsF();}
-   
+    checkWinLose();
+
 
 })
  
 
 btnWicket.addEventListener('click', function(){
-    if (overs.textContent < 10 && wickets.textContent  <10  && (runs.textContent) <= (target.textContent)+5 ){
+    if (overs.textContent < 10 && wickets.textContent  <10  && Number(runs.textContent) <= Number(target.textContent)+5 ){
     wickets.textContent = parseInt(wickets.textContent) + 1;
     ballsF();
     }
+    checkWinLose();
+
     
 })
+
+
+function checkWinLose(){
+    if(overs.textContent == 10 && runs.textContent < target.textContent) resultEl.textContent = ( "You lost , No balls left");
+    if(wickets.textContent == 10 && Number(runs.textContent) < Number(target.textContent)) resultEl.textContent = ( "You lost by " + (Number(target.textContent) - Number(runs.textContent) - 1) + " runs , You are all out in " + overs.textContent+"."+balls.textContent + " overs")
+
+    if( Number(runs.textContent) > Number(target.textContent)) resultEl.textContent = ( `You win by${10 - wickets.textContent} wickets with ${(10 - overs.textContent) * 6 +Number( balls.textContent)} balls left`   )
+    if(overs.textContent == 10 && runs.textContent == target.textContent) resultEl.textContent = ( "You draw ")
+
+
+}
 
 let overs = document.getElementById('overs');
 let balls = document.getElementById('balls');
